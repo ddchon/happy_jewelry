@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 style="text-align:center;"> Contact Us </h1>
+    <br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"><b>Name:</b></span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <br>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"><b>E-Mail:</b></span>
+        </div>
+        <input size="35" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <br>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><b>Message:</b></span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+    <br>
+    <br>
+
+    <button class="btn btn-primary" type="submit"><b>Send</b></button>
+
+
+
+{% endblock content %}

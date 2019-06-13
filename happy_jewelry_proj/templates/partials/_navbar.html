@@ -1,0 +1,19 @@
+<div class="my_navbar navbar navbar-expand-md">
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="navbar-nav ml-auto">
+            <a href="{% url 'home' %}" class="nav-item nav-link my_links">Home</a>
+            <a href="{% url 'inventory' %}" class="nav-item nav-link my_links">Jewelry</a>
+            <a href="{% url 'contact' %}" class="nav-item nav-link my_links">Contact Us</a>
+        </div>
+    </div>
+</div>

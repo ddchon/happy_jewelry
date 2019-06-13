@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <br>
+        <h2 class="table_heading">Our Inventory</h2>
+        <br>
+        <br>
+        <div class="list_table">
+            <table class="table">
+                <thead class="thead">
+                    <tr class="table_header">
+                        <th class="table_head" scope="col">Item</th>
+                        <th class="table_head" scope="col">Description</th>
+                        <th class="table_head" scope="col">Type</th>
+                        <th class="table_head" scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% comment %} {% if cur_item %} {% endcomment %}
+                        {% comment %} {% for item in cur_item %} {% endcomment %}
+                        <tr>
+                            <td>{{ item.description }}</td>
+                            <td>{{ item.type }}</td>
+                            <td>{{ item.price }}</td>
+                    
+                        {% comment %} {% endfor %} {% endcomment %}
+                    {% comment %} {% endif %} {% endcomment %}
+            </table>
+        </div>
+    </div>
+
+
+{% endblock content %}

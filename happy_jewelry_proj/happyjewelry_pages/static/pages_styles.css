@@ -1,0 +1,35 @@
+.home_banner {
+    background-image: url("img/banner_ring_img.jpeg");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 600px;
+    background-size: cover;
+   }
+
+#home_title {
+    /* font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;  */
+    position: absolute;
+    bottom: 15%;
+    width: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.my_navbar {
+    background-color: #4B4D59;
+}
+
+.nav-item {
+    color: white !important;
+}
+
+#my_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 10px 0;
+    background-color: #4B4D59;
+    text-align: center;
+    color: white !important;
+}
