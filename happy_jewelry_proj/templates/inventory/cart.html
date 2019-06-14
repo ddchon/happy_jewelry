@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <form class="add_form" action="{% url 'add' %}" method="POST">
+            {% csrf_token %}
+            <br>
+            <br
+        </form>
+            <h2 class="table_heading">Your Cart:</h2>
+            <br>
+            <br>
+            <div class="list_table">
+                <table class="table">
+                    <thead class="thead">
+                        <tr class="table_header">
+                            <th class="table_head" scope="col">Item</th>
+                            <th class="table_head" scope="col">Description</th>
+                            <th class="table_head" scope="col">Type</th>
+                            <th class="table_head" scope="col">Price</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+    </div>
+
+{% endblock content %}

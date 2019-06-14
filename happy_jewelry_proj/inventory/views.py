@@ -15,7 +15,7 @@ def list_items(request):
     return render(request, 'inventory/inventory.html', context)
 
 def cart(request):
-    return render(request, 'happyjewelry_pages/cart.html')
+    return render(request, 'inventory/cart.html')
 
 def add_cart(request):
     if request.method == "POST":
@@ -25,5 +25,5 @@ def add_cart(request):
                            price=request.POST['price'])
         new_cart.save()
     
-    return render(request, 'happyjewelry_pages/cart.html')
+        return render(request, 'inventory/cart.html')
 
