@@ -36,4 +36,9 @@
     background-color: #4B4D59;
     text-align: center;
     color: white !important;
+    font-size: small;
+}
+
+img {
+    background-color: white;
 }

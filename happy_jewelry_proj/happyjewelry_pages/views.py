@@ -4,9 +4,10 @@ from .models import Message
 
 def index(request):
     return render(request, 'happyjewelry_pages/home.html')
-    
+
 def contact(request):
     return render(request, 'happyjewelry_pages/contact.html')
+
 
 def createmessage(request):
     if request.method == 'POST':
