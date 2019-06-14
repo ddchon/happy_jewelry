@@ -7,13 +7,10 @@ def inventory(request):
     return render(request, 'inventory/inventory.html')
 
 def list_items(request):
-    items = Product.objects.all()
 
     context = {
-        "description": items.description,
-        "type": items.type,
-        "price": items.price
-    }
+            "items": Product.objects.all(),
+        }
 
     return render(request, 'inventory/inventory.html', context)
 

@@ -24,6 +24,10 @@
     color: white !important;
 }
 
+#submit_btn {
+    align-content: center;
+}
+
 #my_footer {
     position: fixed;
     bottom: 0;
