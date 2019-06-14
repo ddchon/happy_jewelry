@@ -14,26 +14,47 @@
                         <th class="table_head" scope="col">Description</th>
                         <th class="table_head" scope="col">Type</th>
                         <th class="table_head" scope="col">Price</th>
+                        <th class="table_head" scope="col">Add To Cart</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <form class="add-form" action = "{% url 'add' %}" method="POST">
+                        {% csrf_token %}
 
-                    {% if items %}
-                        {% for i in items %}
-                        <tr>
-                            <td>
-                                <img src="{{ i.product_img }}">
-                            </td>
-                            <td>{{ i.description }}</td>
-                            <td>{{ i.item_type }}</td>
-                            <td>{{ i.price }}</td>
-                        </tr>
-                        {% endfor %}
-                    {% endif %} 
+                        {% if items %}
+                            {% for i in items %}
+                            <tr>
+                                <td>
+                                    <img src="{{ i.product_img }}">
+                                </td>
+                                <td>{{ i.description }}</td>
+                                <td>{{ i.item_type }}</td>
+                                <td>{{ i.price }}</td>
+                                <td>
+                                    <div id="check_box">
+                                        <input type="checkbox" aria-label="{{ i.id }}" style="width:20px; height:20px;" class="form-control">
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            {% endfor %}
+                        {% endif %} 
+
+                    </form>
+
+
+                
                 </tbody>
             </table>
+
+            <div class="form-group">
+                <div class="submit_btn">
+                    <input type="submit" class="btn btn-outline-secondary">
+                </div>
+            </div>
         </div>
     </div>
+
 
 
 {% endblock content %}

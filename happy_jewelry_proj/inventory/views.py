@@ -24,6 +24,6 @@ def add_cart(request):
                            item_type=request.POST['item_type'],
                            price=request.POST['price'])
         new_cart.save()
-    
+
         return render(request, 'inventory/cart.html')
 

@@ -8,7 +8,6 @@ def index(request):
 def contact(request):
     return render(request, 'happyjewelry_pages/contact.html')
 
-
 def createmessage(request):
     if request.method == 'POST':
         new_message = Message(name=request.POST['name'],

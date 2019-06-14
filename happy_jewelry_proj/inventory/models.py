@@ -7,6 +7,7 @@ class Product(models.Model):
     description = models.CharField(max_length=100)
     item_type = models.CharField(max_length=30)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    add_to_cart = models.BooleanField(default=False)
 
     def __str__(self):
         return self.description
