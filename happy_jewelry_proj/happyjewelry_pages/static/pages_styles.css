@@ -24,6 +24,10 @@
     color: white !important;
 }
 
+h3 {
+    text-align: center;
+}
+
 #submit_btn {
     text-align: center;
 }
