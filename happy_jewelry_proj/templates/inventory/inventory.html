@@ -18,11 +18,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <form class="add-form" action = "{% url 'add' %}" method="POST">
-                        {% csrf_token %}
-
-                        {% if items %}
-                            {% for i in items %}
+                        {% if store_items %}
+                            {% for i in store_items %}
                             <tr>
                                 <td>
                                     <img src="{{ i.product_img }}">
@@ -31,27 +28,21 @@
                                 <td>{{ i.item_type }}</td>
                                 <td>{{ i.price }}</td>
                                 <td>
-                                    <div id="check_box">
-                                        <input type="checkbox" aria-label="{{ i.id }}" style="width:20px; height:20px;" class="form-control">
-                                    </div>
+                                    <form action="{% url 'grabbed' %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="{{ i.id }}">
+                                        <input type="hidden" name="grabbed" value=True>
+                                        <input class="td_button btn btn-outline-secondary" type="submit" value="Add to Cart">
+                                    </form>
                                 </td>
                             </tr>
-                            
+                                                
                             {% endfor %}
-                        {% endif %} 
-
-                    </form>
-
-
-                
+                        {% endif %}
                 </tbody>
+
             </table>
 
-            <div class="form-group">
-                <div class="submit_btn">
-                    <input type="submit" class="btn btn-outline-secondary">
-                </div>
-            </div>
         </div>
     </div>
 

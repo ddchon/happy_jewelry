@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+import json
 from .models import Product
 
 # Create your views here.
@@ -8,22 +9,32 @@ def inventory(request):
 
 def list_items(request):
 
+    items = Product.objects.all()
+
     context = {
-            "items": Product.objects.all(),
+        "store_items": items
         }
 
-    return render(request, 'inventory/inventory.html', context)
+    return render(request, 'inventory/inventory.html', context=context)
 
 def cart(request):
-    return render(request, 'inventory/cart.html')
 
-def add_cart(request):
+    context = {
+        "added_items": Product.objects.filter(add_to_cart=True)
+    }
+    
+    return render(request, 'inventory/cart.html', context=context)
+
+def grabbed(request):
     if request.method == "POST":
-        new_cart = Product(product_img=request.POST['image'],
-                           description=request.POST['description'],
-                           item_type=request.POST['item_type'],
-                           price=request.POST['price'])
-        new_cart.save()
 
-        return render(request, 'inventory/cart.html')
+        to_add = Product.objects.get(id=request.POST['id'])
+
+        to_add.add_to_cart = request.POST['grabbed']
+        
+        to_add.save()
+
+        return redirect('cart')
+    
+    return redirect('cart')
 

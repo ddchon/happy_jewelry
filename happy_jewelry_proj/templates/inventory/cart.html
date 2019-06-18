@@ -3,11 +3,9 @@
 {% block content %}
 
     <div class="container">
-        <form class="add_form" action="{% url 'add' %}" method="POST">
-            {% csrf_token %}
+        
             <br>
-            <br
-        </form>
+            <br>
             <h2 class="table_heading">Your Cart</h2>
             <br>
             <br>
@@ -19,8 +17,35 @@
                             <th class="table_head" scope="col">Description</th>
                             <th class="table_head" scope="col">Type</th>
                             <th class="table_head" scope="col">Price</th>
+                            <th class="table_head" scope="col">Remove</th>
                         </tr>
                     </thead>
+                    <tbody>
+                    
+                    {% if added_items %}
+                        {% for i in added_items %}
+                        
+                            <tr>
+                                <td>
+                                    <img src="{{ i.product_img }}">
+                                </td>
+                                <td>{{ i.description }}</td>
+                                <td>{{ i.item_type }}</td>
+                                <td>{{ i.price }}</td>
+                                <td>
+                                    <form action="{% url 'grabbed' %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="{{ i.id }}">
+                                        <input type="hidden" name="grabbed" value=False>
+                                        <input class="btn btn-outline-secondary" type="submit" value="Remove from Cart">
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    
+                    {% endif %}
+
+                    </tbody>
                 </table>
             </div>
     </div>
