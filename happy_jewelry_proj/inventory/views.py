@@ -34,7 +34,7 @@ def grabbed(request):
         
         to_add.save()
 
-        return redirect('cart')
+        return redirect('inventory')
     
     return redirect('cart')
 
