@@ -10,9 +10,8 @@
 
 #home_title {
     position: relative;
-    bottom: 100%;
     width: auto;
-    margin: auto;
+    margin: 40% 0% 25% 25%;
     text-align: center;
 }
 
