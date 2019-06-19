@@ -1,15 +1,16 @@
 .home_banner {
     background-image: url("img/banner_ring_img.jpeg");
-    background-position: 100%;
+    background-position: 50%;
     background-repeat: no-repeat;
     object-fit: cover;
     height: 600px;
     background-size: cover;
+    display: block;
    }
 
 #home_title {
-    position: absolute;
-    bottom: 15%;
+    position: relative;
+    bottom: 100%;
     width: auto;
     margin: auto;
     text-align: center;

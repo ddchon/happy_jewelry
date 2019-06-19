@@ -22,7 +22,7 @@
                             {% for i in store_items %}
                             <tr>
                                 <td>
-                                    <img src="{{ i.product_img }}">
+                                    <img src="{{ i.product_img.url }}" style="width:50px; height:50px;">
                                 </td>
                                 <td>{{ i.description }}</td>
                                 <td>{{ i.item_type }}</td>
