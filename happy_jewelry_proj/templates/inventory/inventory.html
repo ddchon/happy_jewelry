@@ -54,10 +54,9 @@
                             <input type="hidden" value="Diamond" name="search">
                             <input class="btn btn-outline-secondary" type="submit" value="Diamond">
                         </form>
-                        <form action="{% url 'grabbed' %}" method="POST">
+                        <form class="go_back" action="{% url 'grabbed' %}" method="POST">
                             {% csrf_token %}
-                            <input type="hidden" value="id" name="id">
-                            <input class="btn btn-outline-secondary" type="submit" value="All">
+                            <a class="btn btn-outline-secondary" href="{% url 'inventory' %}">All</a>
                         </form>
 
                 </tbody>
