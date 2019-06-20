@@ -1,3 +1,11 @@
-.submit_btn {
-    text-align:center;
+#go_to_cart {
+    text-align: center;
+}
+
+#go_back {
+    text-align: center;
+}
+
+#totalcost {
+    text-align: center;
 }

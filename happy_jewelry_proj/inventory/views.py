@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-import json
+from django.db.models import Count
 from .models import Product
 
 # Create your views here.
@@ -19,8 +19,15 @@ def list_items(request):
 
 def cart(request):
 
+    add_item = Product.objects.filter(add_to_cart=True)
+
+    total = 0
+    for i in add_item:
+        total += i.price
+
     context = {
-        "added_items": Product.objects.filter(add_to_cart=True)
+        "added_items": add_item,
+        "totals": total
     }
     
     return render(request, 'inventory/cart.html', context=context)
@@ -34,7 +41,10 @@ def grabbed(request):
         
         to_add.save()
 
-        return redirect('inventory')
+        return redirect('cart')
     
-    return redirect('cart')
+    return redirect('inventory')
+
+
+
 

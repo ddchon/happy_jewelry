@@ -44,9 +44,11 @@
                         {% endfor %}
                     
                     {% endif %}
-
+                        
                     </tbody>
                 </table>
+                <p id="totalcost"><b> Total: ${{ totals }}</b></p>
+                <p id="go_back"><a href="{% url 'inventory' %}" input class="btn btn-outline-secondary">Go back to Inventory</a></p>
             </div>
     </div>
 
