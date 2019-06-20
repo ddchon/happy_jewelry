@@ -9,13 +9,19 @@ def inventory(request):
 
 def list_items(request):
 
-    items = Product.objects.all()
+    items = []
 
+    if request.method == "POST":
+        items = Product.objects.filter(item_type=request.POST['search'])
+
+    else:
+        items = Product.objects.all()
+    
     context = {
-        "store_items": items
-        }
+        "stored_items": items
+    }
 
-    return render(request, 'inventory/inventory.html', context=context)
+    return render(request, "inventory/inventory.html", context=context)
 
 def cart(request):
 

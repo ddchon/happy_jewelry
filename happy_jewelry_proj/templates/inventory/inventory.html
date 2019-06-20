@@ -5,7 +5,6 @@
         <br>
         <h2 class="table_heading">Our Inventory</h2>
         <br>
-        <br>
         <div class="list_table">
             <table class="table">
                 <thead class="thead">
@@ -18,8 +17,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                        {% if store_items %}
-                            {% for i in store_items %}
+                        {% if stored_items %}
+                            {% for i in stored_items %}
                             <tr>
                                 <td>
                                     <img src="{{ i.product_img.url }}" style="width:50px; height:50px;">
@@ -40,9 +39,31 @@
                             {% endfor %}
                         {% endif %}
 
+                        <form action="{% url 'inventory' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="Gold" name="search">
+                            <input class="btn btn-outline-secondary" type="submit" value="Gold">
+                        </form>
+                        <form action="{% url 'inventory' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="Silver" name="search">
+                            <input class="btn btn-outline-secondary" type="submit" value="Silver">
+                        </form>
+                        <form action="{% url 'inventory' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="Diamond" name="search">
+                            <input class="btn btn-outline-secondary" type="submit" value="Diamond">
+                        </form>
+                        <form action="{% url 'grabbed' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="id" name="id">
+                            <input class="btn btn-outline-secondary" type="submit" value="All">
+                        </form>
+
                 </tbody>
             </table>
             <p id="go_to_cart"><a href="{% url 'cart' %}" input class="ct_button btn btn-outline-secondary">Go to Cart</a></p>
+            <br>
             <br>
         </div>
     </div>
